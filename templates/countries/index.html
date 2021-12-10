@@ -1,20 +1,25 @@
 {% extends 'base.html' %}
 {% block content %}
 
-{% for country in all_countries %}
-    <div class="country">
-        <a href="/countries/{{country.id}}">{{country.name}}</a>
-    </div>
-    <div class="buttons">
+<h1>Countries</h1>
 
-        <form class="delete-form" action="/countries/{{country.id}}/delete" method="POST">
-        <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
-        </form>
-    </div>
-{% endfor %}
-
-
-
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+  </tr>
+  {% for country in countries %}
+  <tr>
+    <td><a href="/countries/{{ country.id }}"> {{country.name}} </a></td>
+    
+  </tr>
+  {% endfor %}
+</table>
+<h2>Add Countries</h2>
+<form class="form_inline" action="/countries" methods="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name">
+    <input type="submit" value="Add country">
+</form>
 {% endblock %}
-
 

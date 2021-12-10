@@ -6,6 +6,8 @@ from models.country import Country
 import repositories.city_repository as city_repository
 import repositories.country_repository as country_repository
 
+city_repository.delete_all()
+country_repository.delete_all()
 
 country1= Country('United Kingdom')
 country_repository.save(country1)
@@ -21,3 +23,4 @@ city3=City("Lahore", country2)
 city_repository.save(city3)
 city4=City("Islamabad", country2)
 city_repository.save(city4)
+

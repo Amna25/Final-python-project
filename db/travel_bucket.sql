@@ -6,8 +6,11 @@ CREATE TABLE countries(
     name VARCHAR(255)
 );
 
+
 CREATE TABLE cities(
     id SERIAL PRIMARY KEY,
     name VARCHAR (255),
     country_id INT REFERENCES countries(id)
 );
+
+

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add a Country</h1>
+
+<form action="/countries" method="post"> 
+  <label for="country">Select a country:</label>
+    <select name="country_id" id="country">
+      {% for country in countries %}
+      <option value="{{ country.id }}">{{ country.name }}</option>
+      {% endfor %}
+    </select>
+  
+</form>
+
+{% endblock %}

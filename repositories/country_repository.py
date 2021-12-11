@@ -5,12 +5,13 @@ from models.country import Country
 from models.city import City
 import repositories.city_repository as city_repository
 
+
 def save(country):
     sql="INSERT INTO countries( name ) VALUES (%s) RETURNING *"
     values = [country.name]
     results = run_sql( sql, values )
     country.id = results[0]['id']
-    return country
+    country.id=id
 
 def select_all():
     countries = []
@@ -24,8 +25,7 @@ def select_all():
     return countries 
 
 def select(id):
-    country = None
-
+    country=None
     sql = "SELECT * FROM countries WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
@@ -33,6 +33,7 @@ def select(id):
     if result is not None:
         country= Country(result['name'], result['id'])
     return country
+
 
 def delete_all():
     sql = "DELETE FROM countries"
@@ -44,7 +45,7 @@ def delete(id):
     run_sql(sql, values)
 
 def update(country):
-    sql = "UPDATE FROM countries WHERE id =%s"
+    sql = "UPDATE countries SET name =%s WHERE id =%s"
     values = [country.name, country.id]
     run_sql(sql, values)
 

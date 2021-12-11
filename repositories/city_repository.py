@@ -29,10 +29,8 @@ def select(id):
     sql = "SELECT * FROM cities WHERE id = %s"
     values = [id]
     result = run_sql(sql, values)[0]
-
-    if result is not None:
-        country = country_repository.select(result['country_id'])
-        city = City(result['name'],  country, result['id'])
+    country = country_repository.select(result['country_id'])
+    city = City(result['name'],  country, result['id'])
     return city
 
 def delete_all():
@@ -47,7 +45,7 @@ def delete(id):
 
 def update(city):
     sql = "UPDATE cities SET (name, country_id) = (%s, %s) WHERE id = %s"
-    values = [city.title, city.country.id, city.id]
+    values = [city.name, city.country.id, city.id]
     run_sql(sql, values)
 
 def countries(city):

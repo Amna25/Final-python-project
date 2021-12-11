@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,redirecct
+from flask import Flask,render_template,request,redirect
 from flask import Blueprint
 from werkzeug.utils import redirect
 from models.city import City
@@ -16,18 +16,16 @@ def cities():
 #GET '/cities/new'
 @cities_blueprint.route("/cities/new", methods=['GET'])
 def new_city():
-    countries = country_repository.select_all()
-    return render_template("cities/new.html" ,countries=countries)
-
-#CREATE
+    return render_template("cities/new.html")
 #POST '/cities'
 @cities_blueprint.route("/cities", methods=['POST'])
 def create_city():
     name = request.form['name']
     country_id = request.form['country_id']
     country = country_repository.select(country_id)
+    new_city=City(name)
     city = City(name,country)
-    city_repository.save(city)
+    city_repository.save(new_city)
     return redirect('/cities')
 
 #DELETE

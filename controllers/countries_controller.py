@@ -21,15 +21,14 @@ def show(id):
 #GET '/countries/new
 @countries_blueprint.route("/countries/new", methods=['GET'])
 def new_country():
-    cities=city_repository.select_all()
-    return render_template("countries/index.html", cities=cities)
+    return render_template("countries/new.html")
 
 
 #Create
 #Post '/countries'
 @countries_blueprint.route("/countries", methods=['POST'])
 def create_country():
-    name = request.form['name']
-    country = Country(name)
-    country_repository.save(country)
-    return redirect('/countries')
+    name = request.form["name"]
+    new_country = Country(name)
+    country_repository.save(new_country)
+    return redirect("/countries")

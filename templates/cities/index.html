@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> Cities </h1>
+<p class="btn--wrapper">
+    <a class="btn btn--action" href="/cities/new">New Cities</a>
+  </p>
+  
+  <ul>
+    {% for city in cities %}
+    <li>
+    <p>{{ city.name }} - {{ city.country.name }} </p>
+    
+      <p>
+        <form action="/cities/{{ city.id }}/delete" method="POST">
+          <input class="btn btn--danger" type="submit" value="delete" />
+        </form>
+      </p>
+    </li>
+    {% endfor %}
+  </ul>
+  
+  
+  {% endblock %}

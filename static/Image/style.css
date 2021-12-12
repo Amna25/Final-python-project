@@ -1,0 +1,5 @@
+#home-image { 
+    background:url('image/flower.jpg');
+    background-repeat: no-repeat;
+    background-size:cover;
+}

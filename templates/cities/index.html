@@ -9,7 +9,9 @@
   <ul>
     {% for city in cities %}
     <li>
-    <p>{{ city.name }} - {{ city.country.name }} </p>
+    <p>City name:{{ city.name }} <br>
+      Country name:{{city.country.name}}
+    </p>
     
       <p>
         <form action="/cities/{{ city.id }}/delete" method="POST">

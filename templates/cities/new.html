@@ -8,14 +8,17 @@
     <input type = "text" id="name" name="name">
 </div>
 <div>
-    <label for ="country">Country:</label>
+    <label for ="country">Country</label>
     <select name="country_id" id="country">
         {% for country in countries %}
         <option value ="{{country.id}}">
+            {{ country.name }}
         </option>
         {% endfor %}
     </select>
 </div>
+<div>
     <input type="submit" value="add city">
+</div>
 </form>
 {% endblock %}

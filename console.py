@@ -24,3 +24,4 @@ city_repository.save(city3)
 city4=City("Islamabad", country2)
 city_repository.save(city4)
 
+city_repository.sellect_all()

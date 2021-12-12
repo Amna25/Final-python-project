@@ -1,3 +1,4 @@
+DROP TABLE IF EXISTS destinations;
 DROP TABLE IF EXISTS cities;
 DROP TABLE IF EXISTS countries;
 
@@ -13,4 +14,10 @@ CREATE TABLE cities(
     country_id INT REFERENCES countries(id)
 );
 
+CREATE TABLE destinations(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(255),
+    visited BOOLEAN,
+    city_id INT REFERENCES cities(id)
+);
 

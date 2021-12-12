@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1> Destinations </h1>
+<p class="btn--wrapper">
+    <a class="btn btn--action" href="/destinations/new">New Destination</a>
+  </p>
+  
+  <ul>
+    {% for destination  in destinations %}
+    <li>
+    <p>destination name:{{ destination.name }} <br>
+      city name:{{destination.city.name}}<br>
+      {% if destination.visited==True%}
+      <p><i> Visited </i></p>
+      {% endif %}
+      {% if destination.visited==False%}
+      <p><i>Still to visit</i></p>
+      {% endif %}
+    </p>
+    </li>
+    {% endfor %}
+  </ul>
+  
+  {% endblock %}
+

@@ -2,6 +2,7 @@ from db.run_sql import run_sql
 
 from models.city import City
 from models.country import Country
+from models.destination import Destination
 
 import repositories.country_repository as country_repository
 
@@ -24,12 +25,13 @@ def select_all():
     return cities
 
 def select(id):
-    city = None
     sql = "SELECT * FROM cities WHERE id = %s"
+    city=None
     values = [id]
     result = run_sql(sql, values)[0]
-    country = country_repository.select(result['country_id'])
-    city = City(result['name'],  country, result['id'])
+    if result is not None:
+        country = country_repository.select(result['country_id'])
+        city = City(result['name'],  country, result['id'])
     return city
 
 def delete_all():
@@ -57,3 +59,14 @@ def countries(city):
         country= Country(row['name'],row['id'])
         countries.append(country)
     return countries
+
+def destinations(city):
+    destinations = []
+
+    sql= "SELECT * FROM destinations WHERE city_id = %s"
+    values = [city.id]
+    results = run_sql(sql, values)
+    for row in results:
+        destination= Destination(row['name'],row['city.id'],row['visited'],row['id'])
+        destinations.append(destination)
+    return destinations

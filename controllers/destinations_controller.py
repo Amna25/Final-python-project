@@ -42,6 +42,8 @@ def create_destination():
     destination = Destination(name, city,visited)
     destination_repository.save(destination)
     return redirect('/destinations')
+
+
     
 
 

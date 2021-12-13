@@ -79,5 +79,5 @@ def select_all_still_to_visit():
         city = city_repository.select(row['city_id'])
         destination = Destination(row['name'], city, row['visited'], row['id'])
         destinations.append(destination)
-    return destination
+    return destinations
     

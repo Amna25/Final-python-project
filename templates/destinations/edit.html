@@ -1,7 +1,6 @@
-{% extends 'base.html' %}
-
+{% extends "base.html" %}
 {% block content %}
-<h1>Visited Destinations</h1>
+<h1>Still to Visit Destinations</h1>
 <ul>
     {% for destination in  destinations %}
     <li>
@@ -9,5 +8,6 @@
       city name:{{destination.city.name}}</p><br>
     </li>
     {% endfor %}
-
+  </ul>
 {% endblock %}
+  

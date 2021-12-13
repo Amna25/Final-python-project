@@ -29,7 +29,8 @@ def new_country():
 @countries_blueprint.route("/countries", methods=["POST"])
 def create_country():
     name = request.form["name"]
-    new_country = Country(name)
+    visited = True if 'visited' in request.form else False
+    new_country = Country(name,visited)
     country_repository.save(new_country)
     return redirect("/countries")
 
@@ -43,7 +44,8 @@ def edit_country(id):
 @countries_blueprint.route("/countries/<id>", methods=["POST"])
 def update_country(id):
     name = request.form["name"]
-    country = Country(name, id)
+    visited=True if 'visited' in request.form else False
+    country = Country(name,visited, id)
     country_repository.update(country)
     return redirect("/countries")
 
@@ -52,3 +54,15 @@ def update_country(id):
 def delete_country(id):
     country_repository.delete(id)
     return redirect("/countries")
+
+# SHOW
+@countries_blueprint.route("/countries/visited")
+def show_visited_countries():
+    countries = country_repository.select_all_visited()
+    return render_template("destinations/visit.html", countries=countries )
+
+#still_to_visited
+@countries_blueprint.route("/countries/not_visited")
+def show_not_visited_countries():
+    countries = country_repository.select_all_still_to_visit()
+    return render_template("destinations/not_visit.html", countries=countries )

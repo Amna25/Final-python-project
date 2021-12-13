@@ -7,8 +7,8 @@ import repositories.city_repository as city_repository
 
 
 def save(country):
-    sql="INSERT INTO countries( name ) VALUES (%s) RETURNING *"
-    values = [country.name]
+    sql="INSERT INTO countries( name, visited) VALUES (%s,%s) RETURNING *"
+    values = [country.name, country.visited]
     results = run_sql( sql, values )
     country.id = results[0]['id']
     return country
@@ -20,7 +20,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        country = Country(row['name'], row['id'])
+        country = Country(row['name'], row['visited'], row['id'])
         countries.append(country)
     return countries 
 
@@ -31,7 +31,7 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        country= Country(result['name'], result['id'])
+        country= Country(result['name'],result['visited'], result['id'])
     return country
 
 
@@ -46,7 +46,7 @@ def delete(id):
 
 def update(country):
     sql = "UPDATE countries SET name =%s WHERE id =%s"
-    values = [country.name, country.id]
+    values = [country.name, country.visited, country.id]
     run_sql(sql, values)
 
 def cities(country):
@@ -60,3 +60,23 @@ def cities(country):
         city = City(row['name'],row['country_id'],row['id'])
         cities.append(city)
     return cities
+
+def select_all_visited():
+    countries = []
+    sql = "SELECT * FROM countries WHERE visited = True"
+    results = run_sql(sql)
+    for row in results:
+        country = Country(row['name'], row['visited'], row['id'])
+        countries.append(country)
+    return countries
+
+def select_all_still_to_visit():
+    countries = []
+    sql = "SELECT * FROM countries WHERE visited = False"
+    results = run_sql(sql)
+    for row in results:
+        country = Country(row['name'], row['visited'], row['id'])
+        countries.append(country)
+    return countries
+
+        

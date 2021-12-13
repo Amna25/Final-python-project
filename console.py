@@ -9,12 +9,12 @@ import repositories.city_repository as city_repository
 import repositories.destination_repository as destination_repository
 
 
-city_repository.delete_all()
-country_repository.delete_all()
+# city_repository.delete_all()
+# country_repository.delete_all()
 
-country1= Country('United Kingdom')
+country1= Country('United Kingdom',True)
 country_repository.save(country1)
-country2=Country('Pakistan')
+country2=Country('Pakistan', False)
 country_repository.save(country2)
 
 

@@ -55,7 +55,7 @@ def countries(city):
     values = [city.id]
     results = run_sql(sql, values)
     for row in results:
-        country= Country(row['name'],row['id'])
+        country= Country(row['name'],row['visited'],row['id'])
         countries.append(country)
     return countries
 

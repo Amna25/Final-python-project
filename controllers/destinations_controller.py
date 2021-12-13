@@ -20,9 +20,9 @@ def show_visited_destination():
 
 #still_to_visited
 @destinations_blueprint.route("/destinations/not_visited")
-def show_visited_destination():
+def show_not_visited_destination():
     destinations = destination_repository.select_all_still_to_visit()
-    return render_template("destinations/show.html", destinations=destinations )
+    return render_template("destinations/edit.html", destinations=destinations)
 
 # NEW
 # GET '/destinations/new'

@@ -1,28 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title> Travel Adventure</title>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-    <title>Travel Adventure</title>
+  <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>CC Travel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <html>
+</head>
+<head>
+<style>
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown:hover .dropbtn {
+  background-color: #3e778e;
+}
+</style>
 </head>
 <body>
-  <!-- <main>class="flex flex--row"> -->
+
+<div class="dropdown">
+  <button class="dropbtn">countries</button>
+  <div class="dropdown-content">
+  <a href="/countries">list of countries</a>
+  <a href="/countries/new">add country</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">city</button>
+  <div class="dropdown-content">
+  <a href="/cities">list of cities</a>
+  <a href="/cities/new">add cities</a>
+  </div>
+</div>
+<div class="dropdown">
+  <button class="dropbtn">destinations</button>
+  <div class="dropdown-content">
+  <a href="/destinations">sights to cities</a>
+  <a href="/destinations/new">add destinations</a>
+  <a href="/destinations/visited">visited destinations</a>
+  <a href="/destinations/not_visited">still to visit destinations</a>
+  </div>
+</div> 
+</head>
+<body>
+  <header>
     <nav>
-     <ul>
-        <li><a href="/home">Home</a></li>
-        <li><a href="/countries">Countries</a></li>
-        <li><a href="/countries/new"> Add Countries</a></li>
-        <li><a href="/cities">Cities</a></li>
-        <li><a href="/destinations">Destinations</a></li>
-        
+      <ul class="main.nav">
+        <li><a href="#" class="logo">Travel Adventure</a></li>
+      </ul>
     </nav>
-  <section id="content">
-    {% block content %}
-    {% endblock %}
-  </section>
-</main>
+  </header>
+  {% block content %}
+  {% endblock %}
 </body>
 </html>

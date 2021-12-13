@@ -12,6 +12,18 @@ def destinations():
     destinations = destination_repository.select_all()
     return render_template("destinations/index.html", destinations=destinations)
 
+# SHOW
+@destinations_blueprint.route("/destinations/visited")
+def show_visited_destination():
+    destinations = destination_repository.select_all_visited()
+    return render_template("destinations/show.html", destinations=destinations )
+
+#still_to_visited
+@destinations_blueprint.route("/destinations/not_visited")
+def show_visited_destination():
+    destinations = destination_repository.select_all_still_to_visit()
+    return render_template("destinations/show.html", destinations=destinations )
+
 # NEW
 # GET '/destinations/new'
 @destinations_blueprint.route("/destinations/new", methods=['GET'])
@@ -27,7 +39,7 @@ def create_destination():
     city_id = request.form['city_id']
     city = city_repository.select(city_id)
     visited = True if 'visited' in request.form else False
-    destination = Destination(name, city, visited)
+    destination = Destination(name, city,visited)
     destination_repository.save(destination)
     return redirect('/destinations')
     

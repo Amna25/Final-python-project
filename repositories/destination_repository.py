@@ -1,4 +1,5 @@
 from db.run_sql  import run_sql
+from models import destination
 from models.destination import Destination
 from models.city import City
 
@@ -19,7 +20,7 @@ def select_all():
 
     for row in results:
         city = city_repository.select(row['city_id'])
-        destination = Destination(row['name'],city, row['visited'], row['id'])
+        destination = Destination(row['name'], city, row['visited'], row['id'])
         destinations.append(destination)
     return destinations
 
@@ -59,3 +60,24 @@ def cities(destination):
         city= City(row['name'],row['country.id'],row['id'])
         cities.append(city)
     return cities
+
+def select_all_visited():
+    destinations = []
+    sql = "SELECT * FROM destinations WHERE visited = True"
+    results = run_sql(sql)
+    for row in results:
+        city = city_repository.select(row['city_id'])
+        destination = Destination(row['name'], city, row['visited'], row['id'])
+        destinations.append(destination)
+    return destinations
+
+def select_all_still_to_visit():
+    destinations = []
+    sql = "SELECT * FROM destinations WHERE visited = False"
+    results = run_sql(sql)
+    for row in results:
+        city = city_repository.select(row['city_id'])
+        destination = Destination(row['name'], city, row['visited'], row['id'])
+        destinations.append(destination)
+    return destination
+    

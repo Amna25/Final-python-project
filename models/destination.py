@@ -6,3 +6,10 @@ class Destination:
         self.visited= visited
         self.id = id
 
+    def places_to_vist(self):
+        self.visited = True
+
+    def still_to_visit(self):
+        self.visited = False
+
+  

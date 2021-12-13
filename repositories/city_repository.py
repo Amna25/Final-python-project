@@ -7,10 +7,11 @@ from models.destination import Destination
 import repositories.country_repository as country_repository
 
 def save(city):
-    sql= "INSERT INTO cities(name, country_id) VALUES (%s, %s)RETURNING *"
+    sql= "INSERT INTO cities (name, country_id) VALUES (%s, %s) RETURNING * "
     values=[city.name, city.country.id]
-    results=run_sql(sql, values)
+    results = run_sql(sql, values)
     city.id = results[0]['id']
+   
     return city
 
 def select_all():
@@ -26,12 +27,10 @@ def select_all():
 
 def select(id):
     sql = "SELECT * FROM cities WHERE id = %s"
-    city=None
     values = [id]
     result = run_sql(sql, values)[0]
-    if result is not None:
-        country = country_repository.select(result['country_id'])
-        city = City(result['name'],  country, result['id'])
+    country = country_repository.select(result['country_id'])
+    city = City(result['name'],  country, result['id'])
     return city
 
 def delete_all():

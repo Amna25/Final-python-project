@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Visited Destinations</h1>
+<ul>
+    {% for destination in  destinations %}
+    <li>
+    <p>destination name:{{destination.name}} <br>
+      city name:{{destination.city.name}}</p><br>
+    </li>
+    {% endfor %}
+  </ul>
+  <!-- <h1>Still to Visit</h1>
+<ul>
+    {% for destination in  destinations %}
+    <li>
+    <p>destination name:{{destination.name}} <br>
+      city name:{{destination.city.name}}</p><br>
+    </li>
+    {% endfor %}
+  </ul> -->
+
+
+{% endblock %}

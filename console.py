@@ -9,8 +9,8 @@ import repositories.city_repository as city_repository
 import repositories.destination_repository as destination_repository
 
 
-#city_repository.delete_all()
-#country_repository.delete_all()
+city_repository.delete_all()
+country_repository.delete_all()
 
 country1= Country('United Kingdom')
 country_repository.save(country1)
@@ -18,9 +18,9 @@ country2=Country('Pakistan')
 country_repository.save(country2)
 
 
-city1=City("Yest", country1)
+city1 = City("Yest", country1)
 city_repository.save(city1)
-city2=City("TEst", country1)
+city2 = City("TEst", country1)
 city_repository.save(city2)
 # city3=City("Big", country2)
 #city_repository.save(city3)

@@ -25,7 +25,7 @@ def new_city():
     countries= country_repository.select_all()
     return render_template("cities/new.html", countries=countries)
 
-    
+
 #POST '/cities'
 @cities_blueprint.route("/cities", methods=['POST'])
 def create_city():

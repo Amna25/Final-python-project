@@ -2,14 +2,8 @@
 {% block content %}
 
 <h1> Destinations </h1>
-<p class="btn--wrapper">
-    <a class="btn btn--action" href="/destinations/new">New Destination</a><br>
-    <a class="btn btn--action" href="/destinations/visited">Visited Destination</a><br>
-    <a class="btn btn--action" href="/destinations/not_visited">Still to Visit</a>
-
-  </p>
-  
-  <ul>
+<div class="destinations">
+<ul>
     {% for destination in destinations %}
     <li>
     <p>destination name:{{ destination.name }} <br>
@@ -22,10 +16,9 @@
       {% endif %}
     </p>
     </li>
-    <form action ="/countries/search_cities">
-    <label for="search">Searchcities</label>
-    <input type="text" placeholder="serch.." id="search">
-    <input type="submit"></form>
     {% endfor %}
+</ul>
+
+    
   {% endblock %}
 

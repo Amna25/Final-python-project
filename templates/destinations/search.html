@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% for destination in destinations %}
+{{destination.city.name}}
+{% endfor %}
+<!-- form action ="/destinations/search_cities"> -->
+    <label for="search">Search cities</label>
+    <input type="text" placeholder="serch.." id="search">
+    <input type="submit">
+{% endblock %}

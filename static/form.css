@@ -3,18 +3,14 @@ input[type="submit"] {
     font-family: 'Special Elite', cursive;
     background-color: darkcyan;
   }
-  /* form>div{
+  form>div{
    justify-content: space-evenly;
   } */
 
-  /* #add_coutries {
-    left: 50%;
-    top: 50%;
-    margin-left: -25%;
-    position: absolute;
-    margin-top: -25%;
-} */
 form {
-    display:table;/* shrinks to fit content */
+    display:table;
     margin:auto;
+    width:50%;
+    height:200px;
+    font-size: 14pt;
 }

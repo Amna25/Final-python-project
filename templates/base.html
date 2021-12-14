@@ -7,8 +7,11 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='form.css') }}">
 </head>
 <head>
+  <div class ="header">
+    <h1><b>Travel  Adventure</b></h1>
+  </div>
 <style>
-.dropbtn {
+.dropdown {
   background-color: #4c82af;
   color: white;
   padding: 16px;
@@ -56,14 +59,14 @@
   <div class="dropdown-content">
   <a href="/countries">list of countries</a>
   <a href="/countries/new">add country</a>
-  </div>
+</div>
 </div>
 <div class="dropdown">
   <button class="dropbtn">city</button>
   <div class="dropdown-content">
   <a href="/cities">list of cities</a>
   <a href="/cities/new">add cities</a>
-  </div>
+</div>
 </div>
 <div class="dropdown">
   <button class="dropbtn">destinations</button>
@@ -72,17 +75,15 @@
   <a href="/destinations/new">add destinations</a>
   <a href="/destinations/visited">visited destinations</a>
   <a href="/destinations/not_visited">still to visit destinations</a>
-  </div>
 </div> 
+</div>
 </head>
 <body>
-  <header>
-    <nav>
-      <ul class="dropdrown">
-        <li><a href="#" class="logo">Travel Adventure</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- <div class ="header">
+    <h1>Travel Adventure</h1>
+  </div> -->
+  <a href="/destinations/search_cities">Search Cities</a>
+    
   {% block content %}
   {% endblock %}
 </body>

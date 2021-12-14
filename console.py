@@ -18,16 +18,15 @@ country2=Country('Pakistan', False)
 country_repository.save(country2)
 
 
-city1 = City("Yest", country1)
+city1 = City("Edinburgh",True, country1)
 city_repository.save(city1)
-city2 = City("TEst", country1)
+city2 = City("Glasgow",False, country1)
 city_repository.save(city2)
-# city3=City("Big", country2)
-#city_repository.save(city3)
-# city4=City("Islamabad", country2)
-# city_repository.save(city4)
-# city5=City("test", country2)
-# city_repository.save(city5)
+city3=City("Polworth",True, country2)
+city_repository.save(city3)
+city4=City("Islamabad",True, country2)
+city_repository.save(city4)
+
 
 destination1= Destination("Princess Street", city1, True)
 destination_repository.save(destination1)

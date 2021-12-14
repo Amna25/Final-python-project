@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Update a country</h2>
+<h2>Update a city</h2>
 
 
 <form action="/cities/{{city.id}}"  method="POST">
@@ -9,6 +9,11 @@
         <label for="name">Name</label>
         <input type="text" id="name"  name="name" value="{{city.name}}">
     </div>
+    <div>
+        <label for="visited">Visited</label>
+        <input type="checkbox" name="visited" id="visited" value="True">
+    </div>
+
     <div>
         <label for="country">Country:</label>
         <select name="country_id" id="country">

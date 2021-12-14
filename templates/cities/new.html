@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1> Add your favourite Cities </h1>
+
 <form action="/cities" method="post">
+<h1> Add your favourite Cities </h1>
 <div>
     <label for name="name">Name:</label>
     <input type = "text" id="name" name="name">
+</div>
+<div>
+    <label for="visited">Visited</label>
+    <input type="checkbox" name="visited" id="visited" value="True">
 </div>
 <div>
     <label for ="country">Country</label>

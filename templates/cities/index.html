@@ -5,23 +5,30 @@
 <p class="btn--wrapper">
     <a class="btn btn--action" href="/cities/new">New Cities</a>
   </p>
-  
-  <ul>
+  <table>
+    <tr>
+      <th>City Names</th>
+      <th>Country Names</th>
+      <th> Visited </th>
+      <th>Edit</th>
+      <th>Delete</th>
+      </tr>
     {% for city in cities %}
-    <li>
-    <p>City name:{{ city.name }} <br>
-      Country name:{{city.country.name}}
-    </p>
-    
-      <p>
-        <p> <a href= "/cities/{{ city.id }}/edit"> Edit</a></p>
-        <form action="/cities/{{ city.id }}/delete" method="POST">
-          <input class="btn btn--danger" type="submit" value="delete" >
+    <tr>
+    <td>{{ city.name }}</td>
+    <td>{{city.country.name}}</td>
+      {% if city.visited==True%}
+       <td>Visited </td>
+      {% endif %}
+      {% if city.visited==False%}
+      <td>Still to visit</td>
+      {% endif %}
+      
+       <td><a href= "/cities/{{ city.id }}/edit"> Edit</a></td>
+        <td><form action="/cities/{{ city.id }}/delete" method="POST">
+          <input class="btn btn--danger" type="submit" value="delete"></td>
         </form>
-      </p>
-    </li>
     {% endfor %}
-  </ul>
-  
-  
+  </tr>
+    </table>
   {% endblock %}

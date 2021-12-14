@@ -1,0 +1,23 @@
+td, th {
+    text-align: middle;
+    border: 1px solid #dddddd;
+    padding: 8px;
+}
+td {
+    text-align: center;
+    padding: 10px 20px 0px 0px;
+}
+th { 
+    padding: 0px 20px 10px 0px;
+    border-bottom: 1px solid;
+}
+table {
+    font-family: arial, sans-serif;
+    display: grid flex;
+    flex-wrap: wrap;
+    border-collapse: collapse;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: cadetblue;
+    height: 30%;
+}

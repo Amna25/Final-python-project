@@ -1,0 +1,20 @@
+input[type="submit"] {
+    text-transform: uppercase;
+    font-family: 'Special Elite', cursive;
+    background-color: darkcyan;
+  }
+  /* form>div{
+   justify-content: space-evenly;
+  } */
+
+  /* #add_coutries {
+    left: 50%;
+    top: 50%;
+    margin-left: -25%;
+    position: absolute;
+    margin-top: -25%;
+} */
+form {
+    display:table;/* shrinks to fit content */
+    margin:auto;
+}

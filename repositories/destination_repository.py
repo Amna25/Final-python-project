@@ -80,4 +80,14 @@ def select_all_still_to_visit():
         destination = Destination(row['name'], city, row['visited'], row['id'])
         destinations.append(destination)
     return destinations
+
+def search_for_destinations(cities):
+    cities = []
+    sql = "SELECT * FROM cities WHERE destination_id=%s"
+    values = [destination.id]
+    results = run_sql(sql, values)
+    for row in results:
+        city= City(row['name'],row['country.id'],row['id'])
+        cities.append(city)
+    return cities
     

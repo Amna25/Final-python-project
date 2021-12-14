@@ -43,6 +43,11 @@ def create_destination():
     destination_repository.save(destination)
     return redirect('/destinations')
 
+#search
+@destinations_blueprint.route("/destinations/search cities")
+def search_for_destination():
+    destinations = destination_repository.search_for_destination()
+    return render_template("destinations/index.html" ,destinations=destinations)
 
     
 

@@ -3,7 +3,7 @@ input[type="submit"] {
     font-family: 'Special Elite', cursive;
     background-color: darkcyan;
   }
-form>div{
+form>div{ 
     width:320px;
     padding :10px;
     border : 5px solid gray;
@@ -11,8 +11,8 @@ form>div{
     position: center;
     background-color:turquoise;
     margin-left: 50px;
-    margin-right: 50px;
-  } 
+    margin-right: 50px; 
+}
 
 
     

@@ -1,11 +1,36 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 {% block content %}
 
-{% for destination in destinations %}
-{{destination.city.name}}
-{% endfor %}
-<!-- form action ="/destinations/search_cities"> -->
-    <label for="search">Search cities</label>
-    <input type="text" placeholder="serch.." id="search">
-    <input type="submit">
+    {% for destination in destinations %}
+    <option value="{{destination.name}}"></option>
+    {% endfor %}
+    <!-- <label for="city">City Name:</label>
+    <select name="city_id" id="city"> -->
+        {% for city in cities %}
+        <option value ="{{city.id}}">
+            {{ city.name }}
+            
+        </option>
+        
+        {% endfor %}
+        
+
+    <form action ="/destinations/search" method="post" >
+        <label for="search">Search cities</label>
+        <input type="text" placeholder="serch.." id="search">
+        <input type="submit">
+    </form>
+    <!-- </select>
+</form>
+<div>
+    <label for="city">City Name:</label>
+    <select name="city_id" id="city">
+        {% for city in cities %}
+        <option value ="{{city.id}}">
+            {{ city.name }}
+            
+        </option>
+        {% endfor %}
+    </select>
+</div> -->
 {% endblock %}

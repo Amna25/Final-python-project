@@ -1,16 +1,20 @@
-.header h1 {
+.header{
     font-family: 'helvetica neue', helvetica, arial, sans-serif;
     font-family: 'Rock Salt', cursive;
     letter-spacing: 2px;
     word-spacing: 10px;
     padding:30px;
     text-align: center;
-    background: #1abc9c;
     color: rgb(255, 255, 255);
-    font-size: 40px;
-    font-weight: 900;
-    color:dodgerblue;
+    font-size: 25px;
+    font-weight:normal;
+    background: #1abc9c;
+    margin:30px;
+    height: 80px; 
+    float:center;
+    
 }
+
 body {
     background-image: url(./images/tree.jpg);
     background-size: cover;
@@ -44,14 +48,14 @@ ul>li>p>i {
     display : block;
 }
 section>ul>li{
-    display: grid ;
+    display:flex grid;
     height: 50px;
     align-content: center;
-    columns: 2;
-    -webkit-columns: 2;
-    -moz-columns: 2;
     padding:10px;
     margin: 5px;
+    width:100px;
+    text-align: center;
+   
 }
 ul>li>p>b{
     color: rgb(88, 64, 224);

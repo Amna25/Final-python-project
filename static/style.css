@@ -1,5 +1,9 @@
 .header h1 {
-    padding: 60px;
+    font-family: 'helvetica neue', helvetica, arial, sans-serif;
+    font-family: 'Rock Salt', cursive;
+    letter-spacing: 2px;
+    word-spacing: 10px;
+    padding:30px;
     text-align: center;
     background: #1abc9c;
     color: rgb(255, 255, 255);
@@ -22,15 +26,33 @@ h1 {
 h2 {
     color: violet;
 }
+h3{
+    color: rgb(64, 101, 224);
+}
 ul>li {
     display: inline-block;
     padding : 5px;
     color:violet;
-    border : 1px solid blue;
-   background-color:wheat;
+    /* border : solid blue; */
+   background-color:white;
    text-align: justify;
    margin : 30px; 
+   border: medium double blue;
+
 }
 ul>li>p>i {
     display : block;
+}
+section>ul>li{
+    display: grid ;
+    height: 50px;
+    align-content: center;
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+    padding:10px;
+    margin: 5px;
+}
+ul>li>p>b{
+    color: rgb(88, 64, 224);
 }

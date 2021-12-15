@@ -7,11 +7,11 @@ form>div{
     width:320px;
     padding :10px;
     border : 5px solid gray;
-    margin :0;
     color: violet;
     position: center;
     background-color:turquoise;
-    label:10px, 5px, 5px;
+    margin-left: 50px;
+    margin-right: 50px;
   } 
 
 

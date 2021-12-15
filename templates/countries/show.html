@@ -2,15 +2,12 @@
 
 {% block content %}
 <h1> {{country.name}} </h1>
-
-
-
-<h3>Cities:</h3>
+<section>
 <ul>
+    <h3>Cities:</h3>
     {% for city in cities %}
     <li>{{city.name}}</li>
     {% endfor %}
 </ul>
-
-
+</section>
 {% endblock %}

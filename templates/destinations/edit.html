@@ -4,8 +4,10 @@
 <ul>
     {% for destination in  destinations %}
     <li>
-    <p>destination name:{{destination.name}} <br>
-      city name:{{destination.city.name}}</p><br>
+       
+    <p><b>Destination Name:</b> {{destination.name}} <br>
+      
+       <b> City Name:</b>{{destination.city.name}}</p><br>
     </li>
     {% endfor %}
   </ul>

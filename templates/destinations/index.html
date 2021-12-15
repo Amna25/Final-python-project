@@ -6,8 +6,8 @@
 <ul>
     {% for destination in destinations %}
     <li>
-    <p>Sights: {{ destination.name }} <br>
-      City: {{destination.city.name}}<br>
+    <p><b>Sights:</b> {{ destination.name }} <br>
+      <b>City:</b> {{destination.city.name}}<br>
       {% if destination.visited==True%}
       <p><i> Visited </i></p>
       {% endif %}
@@ -18,7 +18,8 @@
     <div class="buttons">
 
         <form class="delete-form" action="/destinations/{{destination.id}}/delete" method="POST">
-          <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button>
+          <!-- <button class="trash-button"><i class="fa fa-trash-o fa-3x" style="color:red" aria-hidden="true"></i></button> -->
+          <input type="submit" value="Delete">
         </form>
     </li>
     {% endfor %}

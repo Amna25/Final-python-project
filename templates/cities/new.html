@@ -9,10 +9,6 @@
     <input type = "text" id="name" name="name">
 </div>
 <div>
-    <label for="visited">Visited</label>
-    <input type="checkbox" name="visited" id="visited" value="True">
-</div>
-<div>
     <label for ="country">Country</label>
     <select name="country_id" id="country">
         {% for country in countries %}
@@ -21,6 +17,10 @@
         </option>
         {% endfor %}
     </select>
+</div>
+<div>
+    <label for="visited">Visited</label>
+    <input type="checkbox" name="visited" id="visited" value="True">
 </div>
 <div>
     <input type="submit" value="add city">

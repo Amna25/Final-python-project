@@ -3,14 +3,16 @@ input[type="submit"] {
     font-family: 'Special Elite', cursive;
     background-color: darkcyan;
   }
-  form>div{
-   justify-content: space-evenly;
-  } */
+form>div{
+    width:320px;
+    padding :10px;
+    border : 5px solid gray;
+    margin :0;
+    color: violet;
+    position: center;
+    background-color:turquoise;
+    label:10px, 5px, 5px;
+  } 
 
-form {
-    display:table;
-    margin:auto;
-    width:50%;
-    height:200px;
-    font-size: 14pt;
-}
+
+    

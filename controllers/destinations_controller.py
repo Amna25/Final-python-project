@@ -49,6 +49,14 @@ def search_for_destination():
     destinations  = destination_repository.search_for_destinations()
     return render_template("destinations/search.html", destinations=destinations)
 
+#DELETE
+#DELETE '/cities/<id>'
+@destinations_blueprint.route("/destinations/<id>/delete", methods=['POST'])
+def delete_destination(id):
+    destination_repository.delete(id)
+    return redirect('/destinations')
+
+
     
 
 

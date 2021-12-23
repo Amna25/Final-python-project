@@ -16,6 +16,10 @@ country1= Country('United Kingdom',True)
 country_repository.save(country1)
 country2=Country('Pakistan', False)
 country_repository.save(country2)
+country3=Country('United states', True)
+country_repository.save(country3)
+country4=Country('Canada', False)
+country_repository.save(country4)
 
 
 city1 = City("Edinburgh",True, country1)
@@ -32,6 +36,10 @@ destination1= Destination("Princess Street", city1, True)
 destination_repository.save(destination1)
 destination2 = Destination("B_Place", city2, False)
 destination_repository.save(destination2)
+destination3 = Destination("Riverside Museum", city2, True)
+destination_repository.save(destination3)
+destination4 = Destination("Badshahi Mosque", city4, False)
+destination_repository.save(destination4)
 
 
 

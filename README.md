@@ -17,8 +17,10 @@ Build an app to track someone's travel adventures.
  * Search for destination by continent, city or country
  * Any other ideas you might come up with
 
-(1)Create  database   db/travel_bucket
-(2)Use postico to check data is being saved
-(3)Run python3 console.py command to check written data  values are being saved in db
-(4)Use psql -d travel_bucket -f  db/travel_adventure.sql command to run queries
-(5)Use Flask run to run display data on browser
+(1)Create  database   db/travel_bucket directory and make two files in it 
+(i)run_sql.py (ii)db/travel_bucket.sql file to create tables
+(2)In this travel_bucket project classes have single name, DB has plural names and controllers also have plural names.
+(3)Use postico to check data is being saved
+(4)Run python3 console.py command to check written data  values are being saved in db
+(5)Use psql -d travel_bucket -f  db/travel_adventure.sql command to run queries
+(6)Use flask run to run display data on browser

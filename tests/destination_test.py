@@ -5,8 +5,7 @@ from models.destination import Destination
 
 class TestDestination(unittest.TestCase):
     def setUp(self):
-        self.country= Country("United Kingdom", True)
-        self.country2= Country("United States", False)
+        
         self.city= City("Edinburgh", True, self.country)
         self.city2 = City("New York", False, self.country2)
         self.destination= Destination("Princess Street", self.city, True)

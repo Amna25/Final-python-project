@@ -6,9 +6,9 @@ from controllers.destinations_controller import destinations_blueprint
 application = Flask(__name__)
 app = application
 
-app.register_blueprint(cities_blueprint)
-app.register_blueprint(countries_blueprint)
-app.register_blueprint(destinations_blueprint)
+application.register_blueprint(cities_blueprint)
+application.register_blueprint(countries_blueprint)
+application.register_blueprint(destinations_blueprint)
 
 @application.route('/')
 def home():

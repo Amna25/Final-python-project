@@ -81,15 +81,15 @@ def select_all_still_to_visit():
         destinations.append(destination)
     return destinations
 
-def search_for_destinations(name):
-    cities = []
-    sql = "SELECT * FROM cities"
-    #values = [name]
-    results = run_sql(sql)
-    for row in results:
-        city= City(row['name'],row['visited'],row['country.id'],row['id'])
-        cities.append(city)
-    return cities
+# def search_for_destinations(name):
+#     cities = []
+#     sql = "SELECT * FROM cities"
+#     #values = [name]
+#     results = run_sql(sql)
+#     for row in results:
+#         city= City(row['name'],row['visited'],row['country.id'],row['id'])
+#         cities.append(city)
+#     return cities
 
 
 

@@ -4,6 +4,7 @@ from controllers.cities_controller import cities_blueprint
 from controllers.countries_controller import countries_blueprint
 from controllers.destinations_controller import destinations_blueprint
 application = Flask(__name__)
+app = application
 
 application.register_blueprint(cities_blueprint)
 application.register_blueprint(countries_blueprint)
